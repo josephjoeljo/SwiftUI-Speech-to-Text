@@ -18,7 +18,7 @@ struct SpeechButton: View {
     
     var body: some View {
         
-        Button(action:{
+        Button(action:{// Button
             if(self.swiftUISpeech.getSpeechStatus() == "Denied - Close the App"){// checks status of auth if no auth pop up error
                 self.actionPop.toggle()
             }else{
@@ -32,7 +32,7 @@ struct SpeechButton: View {
                 .foregroundColor(.white)
                 .background(swiftUISpeech.isRecording ? Circle().foregroundColor(.red).frame(width: 85, height: 85) : Circle().foregroundColor(.blue).frame(width: 70, height: 70))
         }.actionSheet(isPresented: $actionPop){
-            ActionSheet(title: Text("ERROR: - 1"), message: Text("Access Denied by User"), buttons: [ActionSheet.Button.destructive(Text("Reinstall the Appp"))])
+            ActionSheet(title: Text("ERROR: - 1"), message: Text("Access Denied by User"), buttons: [ActionSheet.Button.destructive(Text("Reinstall the Appp"))])// Error catch if the auth failed or denied
         }
     }
 }
