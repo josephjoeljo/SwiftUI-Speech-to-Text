@@ -26,7 +26,7 @@ struct SpeechButton: View {
                 self.swiftUISpeech.isRecording ? self.swiftUISpeech.startRecording() : self.swiftUISpeech.stopRecording()
             }
         }){
-            Image(systemName: "waveform.path")// Button
+            Image(systemName: "waveform")// Button Image
                 .resizable()
                 .frame(width: 40, height: 40)
                 .foregroundColor(.white)

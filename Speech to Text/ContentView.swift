@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             VStack{
-                Text("\(swiftUISpeech.outputText)")
+                Text("\(swiftUISpeech.outputText)")// prints results to screen
                     .font(.title)
                     .bold()
                 
@@ -25,13 +25,7 @@ struct ContentView: View {
             VStack {// Speech button
                 
                 swiftUISpeech.getButton()
-                
-            }
-            VStack{// status of Authority
-                
-                swiftUISpeech.showStatus()
                 Spacer()
-                
             }
             
         }

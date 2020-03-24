@@ -40,47 +40,11 @@ public class SwiftUISpeech: ObservableObject{
 
     }
     
-    func showStatus()-> some View{
-        
-        if(self.getSpeechStatus() == "Authorized"){// If the user Accepts the promt
-            let text = Text("\(self.getSpeechStatus())")
-                .foregroundColor(.green)
-                .padding(.top, 15)
-            return text
-        }
-        if(self.getSpeechStatus() == "Not yet Determined"){// if for some reason the pop up failed
-            let text = Text("\(self.getSpeechStatus())")
-                .foregroundColor(.yellow)
-                .padding(.top, 15)
-            return text
-        }
-        if(self.getSpeechStatus() == "Denied - Close the App"){// if the user denies access
-            let text = Text("\(self.getSpeechStatus())")
-                .foregroundColor(.red)
-                .padding(.top, 15)
-            return text
-        }
-        if(self.getSpeechStatus() == "Restricted - Close the App"){// if the user denies access
-            let text = Text("\(self.getSpeechStatus())")
-                .foregroundColor(.yellow)
-                .padding(.top, 15)
-            return text
-        }
-        if(self.getSpeechStatus() == "ERROR: No Status Defined"){// if the user denies access
-            let text = Text("\(self.getSpeechStatus())")
-                .foregroundColor(.red)
-                .padding(.top, 15)
-            return text
-        }
-        return Text("ERROR").foregroundColor(.red).padding(.top,15)
-        
-    }
-    
-    func getButton()->SpeechButton{
+    func getButton()->SpeechButton{ // returns the button
         return button
-    }// gets the button
+    }// end of get button
     
-    func startRecording(){
+    func startRecording(){// starts the recording sequence
         
         // restarts the text
         outputText = "";
@@ -134,7 +98,7 @@ public class SwiftUISpeech: ObservableObject{
                 
             }
         }
-    }
+    }// end of stop recording
     
     func stopRecording(){// end recording
         
@@ -170,6 +134,7 @@ public class SwiftUISpeech: ObservableObject{
         
     }// end of get speech status
     
+    /* Variables **/
     @Published var isRecording:Bool = false
     @Published var button = SpeechButton()
     
