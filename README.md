@@ -23,7 +23,7 @@ SwiftUI Speech - Class
 SpeechButton - Button View
 
 
-- SwiftUI Speech Class -
+SwiftUI Speech Class:
 
 
 Variables:
